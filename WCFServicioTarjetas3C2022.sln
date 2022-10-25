@@ -1,0 +1,51 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32901.215
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "WCFServicioTarjetas3C2022", "WCFServicioTarjetas3C2022\", "{99271824-CBA2-46BD-9800-7322663E6FC1}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.8"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_59736"
+		Debug.AspNetCompiler.PhysicalPath = "WCFServicioTarjetas3C2022\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_59736\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_59736"
+		Release.AspNetCompiler.PhysicalPath = "WCFServicioTarjetas3C2022\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_59736\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "59736"
+		SlnRelativePath = "WCFServicioTarjetas3C2022\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClienteWebTarjetas", "ClienteWebTarjetas\ClienteWebTarjetas.csproj", "{1BDE58BD-1225-41B4-8976-D59D02E7EEAB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{99271824-CBA2-46BD-9800-7322663E6FC1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99271824-CBA2-46BD-9800-7322663E6FC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99271824-CBA2-46BD-9800-7322663E6FC1}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{99271824-CBA2-46BD-9800-7322663E6FC1}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{1BDE58BD-1225-41B4-8976-D59D02E7EEAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1BDE58BD-1225-41B4-8976-D59D02E7EEAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1BDE58BD-1225-41B4-8976-D59D02E7EEAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1BDE58BD-1225-41B4-8976-D59D02E7EEAB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B70D8DAF-91FA-4A60-A4B2-75081EB78E4D}
+	EndGlobalSection
+EndGlobal

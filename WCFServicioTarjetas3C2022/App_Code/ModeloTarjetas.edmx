@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Tarjetas3C2022Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Emisor">
+          <Key>
+            <PropertyRef Name="EMI_CODIGO" />
+          </Key>
+          <Property Name="EMI_CODIGO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EMI_DESCRIPCION" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="EMI_PREFIJO" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="EMI_NUMERO_DIGITOS" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Tarjeta">
+          <Key>
+            <PropertyRef Name="TAR_CODIGO" />
+          </Key>
+          <Property Name="TAR_CODIGO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TAR_NUMERO" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="TAR_TIPO" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="TAR_SALDO" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="TAR_FECHA_EMISION" Type="datetime" Nullable="false" />
+          <Property Name="TAR_FECHA_VENCIMIENTO" Type="datetime" Nullable="false" />
+          <Property Name="TAR_ESTADO" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="TAR_CODIGO_CLIENTE" Type="int" Nullable="false" />
+          <Property Name="TAR_NOMBRE_CLIENTE" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="Tarjetas3C2022ModelStoreContainer">
+          <EntitySet Name="Emisor" EntityType="Self.Emisor" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tarjeta" EntityType="Self.Tarjeta" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Tarjetas3C2022Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Emisor">
+          <Key>
+            <PropertyRef Name="EMI_CODIGO" />
+          </Key>
+          <Property Name="EMI_CODIGO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EMI_DESCRIPCION" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="EMI_PREFIJO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="EMI_NUMERO_DIGITOS" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Tarjeta">
+          <Key>
+            <PropertyRef Name="TAR_CODIGO" />
+          </Key>
+          <Property Name="TAR_CODIGO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TAR_NUMERO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TAR_TIPO" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TAR_SALDO" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="TAR_FECHA_EMISION" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="TAR_FECHA_VENCIMIENTO" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="TAR_ESTADO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TAR_CODIGO_CLIENTE" Type="Int32" Nullable="false" />
+          <Property Name="TAR_NOMBRE_CLIENTE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="Tarjetas3C2022Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Emisor" EntityType="Self.Emisor" />
+          <EntitySet Name="Tarjeta" EntityType="Self.Tarjeta" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Tarjetas3C2022ModelStoreContainer" CdmEntityContainer="Tarjetas3C2022Entities">
+          <EntitySetMapping Name="Emisor">
+            <EntityTypeMapping TypeName="Tarjetas3C2022Model.Emisor">
+              <MappingFragment StoreEntitySet="Emisor">
+                <ScalarProperty Name="EMI_CODIGO" ColumnName="EMI_CODIGO" />
+                <ScalarProperty Name="EMI_DESCRIPCION" ColumnName="EMI_DESCRIPCION" />
+                <ScalarProperty Name="EMI_PREFIJO" ColumnName="EMI_PREFIJO" />
+                <ScalarProperty Name="EMI_NUMERO_DIGITOS" ColumnName="EMI_NUMERO_DIGITOS" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tarjeta">
+            <EntityTypeMapping TypeName="Tarjetas3C2022Model.Tarjeta">
+              <MappingFragment StoreEntitySet="Tarjeta">
+                <ScalarProperty Name="TAR_CODIGO" ColumnName="TAR_CODIGO" />
+                <ScalarProperty Name="TAR_NUMERO" ColumnName="TAR_NUMERO" />
+                <ScalarProperty Name="TAR_TIPO" ColumnName="TAR_TIPO" />
+                <ScalarProperty Name="TAR_SALDO" ColumnName="TAR_SALDO" />
+                <ScalarProperty Name="TAR_FECHA_EMISION" ColumnName="TAR_FECHA_EMISION" />
+                <ScalarProperty Name="TAR_FECHA_VENCIMIENTO" ColumnName="TAR_FECHA_VENCIMIENTO" />
+                <ScalarProperty Name="TAR_ESTADO" ColumnName="TAR_ESTADO" />
+                <ScalarProperty Name="TAR_CODIGO_CLIENTE" ColumnName="TAR_CODIGO_CLIENTE" />
+                <ScalarProperty Name="TAR_NOMBRE_CLIENTE" ColumnName="TAR_NOMBRE_CLIENTE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
