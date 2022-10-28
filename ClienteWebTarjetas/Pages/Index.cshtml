@@ -1,10 +1,48 @@
 ﻿@page
+@using ServicioTarjetas;
 @model IndexModel
 @{
     ViewData["Title"] = "Home page";
 }
 
+
+
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css" />
+<link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.2.2/css/buttons.dataTables.min.css" />
+
+
+
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<h4>ULACIT - Tarjetas</h4>
+<hr />
+    <table id="EmisoresTabla" class="display" style="width:100%">
+    <thead>
+    <tr>
+        <th>Codigo</th>
+        <th>Descripcion</th>
+        <th>Prefijo</th>
+        <th>Número de digitos</th>
+    </tr>
+     </thead>
+    <tbody>
+    @foreach (Emisor emisor in Model.Emisores)
+    {
+        <tr>
+            <td>@emisor.EMI_CODIGO</td>
+            <td>@emisor.EMI_DESCRIPCION</td>
+            <td>@emisor.EMI_PREFIJO</td>
+            <td>@emisor.EMI_NUMERO_DIGITOS</td>
+        </tr>
+    }
+     </tbody>
+</table>
 </div>
+@section scripts
+    {
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.2.2/js/dataTables.buttons.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"></script>
+    <script type="text/javascript" src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js"></script>
+    <script type="text/javascript" src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.2.2/js/buttons.html5.min.js"></script>
+  }

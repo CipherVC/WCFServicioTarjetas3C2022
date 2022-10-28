@@ -1,11 +1,13 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using ServicioTarjetas;
 
 namespace ClienteWebTarjetas.Pages
 {
     public class IndexModel : PageModel
     {
         private readonly ILogger<IndexModel> _logger;
+        public List<ServicioTarjetas.Emisor> Emisores = new List<Emisor>();
 
         public IndexModel(ILogger<IndexModel> logger)
         {
@@ -14,6 +16,8 @@ namespace ClienteWebTarjetas.Pages
 
         public void OnGet()
         {
+            ServicioTarjetas.ServicioTarjetasClient servicio = new ServicioTarjetas.ServicioTarjetasClient();
+            this.Emisores = servicio.ObtenerEmisoresAsync().Result.ToList();
 
         }
     }
